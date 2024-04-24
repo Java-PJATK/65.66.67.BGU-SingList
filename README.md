@@ -24,7 +24,7 @@ Note that having the reference to the first node (conventionally called **head**
   
 Let us consider an example. The class **Node** represents a node containing data - in this case just an **int** - and a reference to the next node:
   
-### **Listing 65 BGU-SingList/Node.java**
+### **[Listing 65 BGU-SingList/Node.java](https://github.com/Java-PJATK/65.66.67.BGU-SingList/blob/main/Node.java)**
 ```java
 // Listing 65
 // BGU-SingList/Node.java
