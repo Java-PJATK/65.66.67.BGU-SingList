@@ -24,7 +24,9 @@ Note that having the reference to the first node (conventionally called **head**
   
 Let us consider an example. The class **Node** represents a node containing data - in this case just an **int** - and a reference to the next node:
   
+### **Listing 65 BGU-SingList/Node.java**
 ```java
+// Listing 65
 // BGU-SingList/Node.java
  
   // could be private static inner class of MyList
@@ -45,7 +47,9 @@ The class representing the whole list will contain only one field: the head of t
   
 The **showListReversed** method prints the list in the reverse order by calling private, _recursive_ function **showRev**. The main idea here is that the function _first_ calls itself for the next node (if it exists), and only then, when the flow of control returns to it, prints information on _this_ element.  
 
+### **Listing 66 BGU-SingList/MyList.java**  
 ```java
+// Listing 66 
 // BGU-SingList/MyList.java
  
 public class MyList {
