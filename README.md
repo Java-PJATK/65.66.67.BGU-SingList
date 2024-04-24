@@ -47,7 +47,7 @@ The class representing the whole list will contain only one field: the head of t
   
 The **showListReversed** method prints the list in the reverse order by calling private, _recursive_ function **showRev**. The main idea here is that the function _first_ calls itself for the next node (if it exists), and only then, when the flow of control returns to it, prints information on _this_ element.  
 
-### **Listing 66 BGU-SingList/MyList.java**  
+### **[Listing 66 BGU-SingList/MyList.java](https://github.com/Java-PJATK/65.66.67.BGU-SingList/blob/main/MyList.java)**  
 ```java
 // Listing 66 
 // BGU-SingList/MyList.java
