@@ -1,5 +1,3 @@
-// BGU-SingList/Node.java
- 
   // could be private static inner class of MyList
 public class Node {
     int data;
