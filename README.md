@@ -18,7 +18,7 @@ A singly linked list represents a sequence of pieces of data of a certain type (
 
 Thus, the situation looks like this:
 
-[![Node]([https://doimages.nyc3.cdn.digitaloceanspaces.com/002Blog/0-BLOG-BANNERS/app_platform.png](https://raw.githubusercontent.com/Java-PJATK/65.66.67.BGU-SingList/main/Node-data-next-head-null.png))]()
+[![Node]([https://doimages.nyc3.cdn.digitaloceanspaces.com/002Blog/0-BLOG-BANNERS/app_platform.png](https://raw.githubusercontent.com/Java-PJATK/65.66.67.BGU-SingList/main/Node-data-next-head-null.png))](https://raw.githubusercontent.com/Java-PJATK/65.66.67.BGU-SingList/main/Node-data-next-head-null.png)
 
 Note that having the reference to the first node (conventionally called head), we can access all the nodes, because in each of them we will find the reference to the next one. Let us consider an example. The class Node represents a node containing data -in this case just an int - and a reference to the next node:
 
