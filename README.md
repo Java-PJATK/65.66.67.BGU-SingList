@@ -16,7 +16,8 @@ In this section, we will mention just a few most fundamental data structures bas
   
 A singly linked list represents a sequence of pieces of data of a certain type (in an extreme case, references to object of type Object which may represent anything). Each such piece of data is “wrapped” in an object of some type (conventionally called Node) as its field, the other field being the reference to the next node of the list. In this way, we can build a chain of nodes, where each node contains information about the next. We need some kind of a marker which will mark the last node as being the last: for example, we can adopt the convention that the last node’s next field is null.
 
-Thus, the situation looks like this:
+Thus, the situation looks like this:  
+  
 ![Node](https://raw.githubusercontent.com/Java-PJATK/65.66.67.BGU-SingList/main/Node-data-next-head-null.png "Node")  
   
 Note that having the reference to the first node (conventionally called head), we can access all the nodes, because in each of them we will find the reference to the next one. Let us consider an example. The class Node represents a node containing data -in this case just an int - and a reference to the next node:
