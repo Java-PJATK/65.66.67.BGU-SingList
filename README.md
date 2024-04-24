@@ -37,6 +37,19 @@ add new nodes at the beginning (addFront) and at the end (addBack) of
 the list. Notice that adding a node at the end requires traversing the whole
 list. Also, to count elements of the list (the size method), we have to
 traverse the whole list.  
+
+```java
+// BGU-SingList/Node.java
+ 
+  // could be private static inner class of MyList
+public class Node {
+    int data;
+    Node next;
+    Node(int data, Node next) {
+        this.data = data;
+        this.next = next;
+    
+```
   
 The showListReversed method prints the list in the reverse order by
 calling private, recursive function showRev. The main idea here is that the
