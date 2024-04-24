@@ -48,16 +48,96 @@ public class Node {
     Node(int data, Node next) {
         this.data = data;
         this.next = next;
-    
+    }
+    Node(int data) {
+        this(data,null);
+    }
+}
 ```
   
 The showListReversed method prints the list in the reverse order by
-calling private, recursive function showRev. The main idea here is that the
-function first calls itself for the next node (if it exists), and only then, when
-the flow of control returns to it, prints information on this element.  
+calling private, _recursive_ function showRev. The main idea here is that the
+function _first_ calls itself for the next node (if it exists), and only then, when
+the flow of control returns to it, prints information on _this_ element.  
+
+```java
+// BGU-SingList/MyList.java
+ 
+public class MyList {
+    private Node head;
+
+    public MyList() {
+        head = null;
+    }
+
+    public void addFront(int data) {
+        head = new Node(data,head);
+    }
+
+    public void addBack(int data) {
+        if (head == null) {
+            addFront(data);
+            return;
+        }
+        Node tmp = head;
+        while(tmp.next != null)
+            tmp = tmp.next;
+        tmp.next = new Node(data);
+    }
+    public void showList() {
+        System.out.print("[ ");
+        Node tmp = head;
+        while(tmp != null) {
+            System.out.print(tmp.data + " ");
+            tmp = tmp.next;
+        }
+        System.out.println("]");
+    }
+    public void showListReversed() {
+        System.out.print("[ ");
+        showRev(head);
+        System.out.print("]");
+    }
+    private void showRev(Node h) {
+        if (h.next != null) showRev(h.next);
+        System.out.print(h.data + " ");
+    }
+    public int size() {
+          // inefficient!
+        int count = 0;
+        Node tmp = head;
+        while(tmp != null) {
+            ++count;
+            tmp = tmp.next;
+        }
+        return count;
+    }
+    public boolean empty() {
+        return head == null;
+    }
+}
+```
   
 In Main, we build a list and then print its contents  
-  
+
+```java
+// BGU-SingList/Main.java
+ 
+public class Main {
+    public static void main(String[] args) {
+        MyList list = new MyList();
+        list.addBack(4);
+        list.addBack(5);
+        list.addFront(3);
+        list.addFront(2);
+        list.addFront(1);
+        list.showList();
+        list.showListReversed();
+        System.out.println("\nsize = " + list.size());
+    }
+}
+```
+ 
 The program prints
 
 
