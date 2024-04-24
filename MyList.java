@@ -1,5 +1,3 @@
-// BGU-SingList/MyList.java
- 
 public class MyList {
     private Node head;
 
