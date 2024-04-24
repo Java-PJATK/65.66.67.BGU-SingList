@@ -12,31 +12,17 @@ One important, and very useful, data structure is already known to us: arrays. R
   
 In this section, we will mention just a few most fundamental data structures based on lists (ordered sequences of elements): lists as such, queues and stacks. Of course, there are many other equally useful structures - like dictionaries (maps), trees, graphs etc. — you will study them later, although we will say a few words about maps in the section on collections in Java.  
   
-12.1 Singly linked lists  
+##12.1 Singly linked lists  
   
-A singly linked list represents a sequence of pieces of data of a
-certain type (in an extreme case, references to object of type Object
-which may represent anything). Each such piece of data is “wrapped”
-in an object of some type (conventionally called Node) as its field, the
-other field being the reference to the next node of the list. In this
-way, we can build a chain of nodes, where each node contains
-information about the next. We need some kind of a marker which
-will mark the last node as being the last: for example, we can adopt
-the convention that the last node’s next field is null.
+A singly linked list represents a sequence of pieces of data of a certain type (in an extreme case, references to object of type Object which may represent anything). Each such piece of data is “wrapped” in an object of some type (conventionally called Node) as its field, the other field being the reference to the next node of the list. In this way, we can build a chain of nodes, where each node contains information about the next. We need some kind of a marker which will mark the last node as being the last: for example, we can adopt the convention that the last node’s next field is null.
+
 Thus, the situation looks like this:
-Note that having the reference to the first node (conventionally
-called head), we can access all the nodes, because in each of them we
-will find the reference to the next one.
-Let us consider an example. The class Node represents a node
-containing data -in this case just an int - and a reference to the next
-node:  
-  
-The class representing the whole list will contain only one field: the head
-of the list, i.e., the reference to its first node. We will add methods which
-add new nodes at the beginning (addFront) and at the end (addBack) of
-the list. Notice that adding a node at the end requires traversing the whole
-list. Also, to count elements of the list (the size method), we have to
-traverse the whole list.  
+
+[![Node]([https://doimages.nyc3.cdn.digitaloceanspaces.com/002Blog/0-BLOG-BANNERS/app_platform.png](https://raw.githubusercontent.com/Java-PJATK/65.66.67.BGU-SingList/main/Node-data-next-head-null.png))]()
+
+Note that having the reference to the first node (conventionally called head), we can access all the nodes, because in each of them we will find the reference to the next one. Let us consider an example. The class Node represents a node containing data -in this case just an int - and a reference to the next node:
+
+The class representing the whole list will contain only one field: the head of the list, i.e., the reference to its first node. We will add methods which add new nodes at the beginning (addFront) and at the end (addBack) of the list. Notice that adding a node at the end requires traversing the whole list. Also, to count elements of the list (the size method), we have to traverse the whole list.
 
 ```java
 // BGU-SingList/Node.java
@@ -55,10 +41,7 @@ public class Node {
 }
 ```
   
-The showListReversed method prints the list in the reverse order by
-calling private, _recursive_ function showRev. The main idea here is that the
-function _first_ calls itself for the next node (if it exists), and only then, when
-the flow of control returns to it, prints information on _this_ element.  
+The showListReversed method prints the list in the reverse order by calling private, _recursive_ function showRev. The main idea here is that the function _first_ calls itself for the next node (if it exists), and only then, when the flow of control returns to it, prints information on _this_ element.  
 
 ```java
 // BGU-SingList/MyList.java
@@ -140,7 +123,11 @@ public class Main {
  
 The program prints
 
-
+```
+  [ 1 2 3 4 5 ]
+  [ 5 4 3 2 1 ]
+  size = 5
+```
 
 Of course, for our list to be useful, we would have to add more methods:  
 
