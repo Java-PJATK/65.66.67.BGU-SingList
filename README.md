@@ -76,6 +76,7 @@ public class MyList {
             return;
         }
         Node tmp = head;
+
         while(tmp.next != null)
             tmp = tmp.next;
         tmp.next = new Node(data);
@@ -113,6 +114,8 @@ public class MyList {
     }
 }
 ```
+
+
   
 In **Main**, we build a list and then print its contents  
 
