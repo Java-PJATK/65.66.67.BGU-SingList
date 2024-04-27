@@ -41,6 +41,13 @@ public class Node {
         this(data,null);
     }
 }
+
+/*
+Second Constructor:
+The second constructor takes only one parameter: data.
+It calls the first constructor (with next set to null) using the this(data, null) syntax.
+This allows creating a node with only data and no next node reference. 
+*/
 ```
 
 The class representing the whole list will contain only one field: the head of the list, i.e., the reference to its first node. We will add methods which add new nodes at the beginning (**addFront**) and at the end (**addBack**) of the list. Notice that adding a node at the end requires traversing the whole list. Also, to count elements of the list (the **size** method), we have to traverse the whole list.  
