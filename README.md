@@ -151,8 +151,10 @@ Of course, for our list to be useful, we would have to add more methods: for exa
 
 ## Youtube Videos
 
-[Singly Linked List | Insert, Delete, Complexity Analysis @Blue Tree Code](https://youtu.be/Ovhj6qDSF9M) 
-[Recursion for Beginners: A Beginner's Guide to Recursion - Al Sweigart](https://www.youtube.com/watch?v=AfBqVVKg4GE&t=649s)
+[Singly Linked List | Insert, Delete, Complexity Analysis @Blue Tree Code](https://youtu.be/Ovhj6qDSF9M)  
+
+[Recursion for Beginners: A Beginner's Guide to Recursion - Al Sweigart](https://www.youtube.com/watch?v=AfBqVVKg4GE&t=649s) [🔗](https://www.amazon.co.uk/Recursive-Book-Recursion-Interview-Javascript/dp/1718502028)
+
 When starting recursive code always ask what is the:
 * base case
 * recursive case
