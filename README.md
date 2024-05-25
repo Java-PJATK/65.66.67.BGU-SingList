@@ -160,3 +160,110 @@ When starting recursive code always ask what is the:
 * recursive case
 
 Call stack. Stack frame/Activation record.
+
+
+Certainly! Let's compare the two methods: `showListReversed` with its helper `showRev`, and `showReversedRecursive` with its helper `showReversedRecursiveHelper`. Both methods aim to display the linked list in reverse order, but they have different base case validations.
+
+### Method 1: `showListReversed`
+
+```java
+public void showListReversed() {
+    System.out.print("[ ");
+    showRev(head);
+    System.out.print("]");
+}
+
+private void showRev(Node h) {
+    if (h.next != null) {
+        showRev(h.next);
+    }
+    System.out.print(h.data + " ");
+}
+```
+
+### Method 2: `showReversedRecursive`
+
+```java
+public void showReversedRecursive() {
+    showReversedRecursiveHelper(head);
+    System.out.println();
+}
+
+private void showReversedRecursiveHelper(Node<T> node) {
+    if (node == null) {
+        return;
+    }
+    showReversedRecursiveHelper(node.next);
+    System.out.print(node.data + " ");
+}
+```
+
+### Comparison of `if` Validation
+
+#### `showRev` in `showListReversed`
+
+```java
+private void showRev(Node h) {
+    if (h.next != null) {  // Base case: if the next node is null, stop recursion.
+        showRev(h.next);
+    }
+    System.out.print(h.data + " ");
+}
+```
+
+- **Condition**: `if (h.next != null)`
+  - This checks if the current node `h` has a `next` node.
+  - The base case here is when `h.next` is `null`, meaning we have reached the last node in the list.
+
+- **Behavior**:
+  - If `h.next` is not `null`, it continues to call `showRev` recursively with `h.next`.
+  - When the base case is reached (`h.next == null`), it stops making further recursive calls.
+
+- **Implication**: This method does not handle an empty list directly since it assumes `head` is non-null. If `head` is `null`, a `NullPointerException` would occur.
+
+#### `showReversedRecursiveHelper` in `showReversedRecursive`
+
+```java
+private void showReversedRecursiveHelper(Node<T> node) {
+    if (node == null) {  // Base case: if the current node is null, stop recursion.
+        return;
+    }
+    showReversedRecursiveHelper(node.next);
+    System.out.print(node.data + " ");
+}
+```
+
+- **Condition**: `if (node == null)`
+  - This checks if the current node `node` is `null`.
+  - The base case here is when `node` itself is `null`, meaning we have moved past the last node in the list.
+
+- **Behavior**:
+  - If `node` is not `null`, it continues to call `showReversedRecursiveHelper` recursively with `node.next`.
+  - When the base case is reached (`node == null`), it returns and stops making further recursive calls.
+
+- **Implication**: This method properly handles an empty list since the base case is when the current node is `null`, which will be the case when `head` is `null`.
+
+### Key Differences in Base Case Validations
+
+1. **Base Case for Stopping Recursion**:
+   - **`showRev`:** `if (h.next != null)`
+     - This stops recursion when `h.next` is `null`, meaning it checks if the next node is `null`.
+     - Assumes the current node `h` is never `null`, which can be problematic for empty lists.
+   - **`showReversedRecursiveHelper`:** `if (node == null)`
+     - This stops recursion when `node` itself is `null`, meaning it checks if the current node is `null`.
+     - Handles empty lists gracefully because it considers the possibility of the current node being `null`.
+
+2. **Handling an Empty List**:
+   - **`showRev`:** Will cause a `NullPointerException` if `head` is `null` because it blindly tries to access `head.next`.
+   - **`showReversedRecursiveHelper`:** Properly handles an empty list by checking if `node` is `null` at the start.
+
+3. **Code Readability and Safety**:
+   - **`showRev`:** Slightly less safe since it assumes the presence of nodes.
+   - **`showReversedRecursiveHelper`:** More readable and safer as it directly checks for a null node, making it clear that it handles empty lists properly.
+
+### Summary
+
+- Both methods print the elements of the linked list in reverse order.
+- The `if` validation in `showRev` checks if the next node is `null`, which can lead to issues with empty lists.
+- The `if` validation in `showReversedRecursiveHelper` checks if the current node is `null`, making it more robust and suitable for handling empty lists.
+- Always consider edge cases like empty lists when writing recursive functions to ensure they handle all possible scenarios gracefully.
