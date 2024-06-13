@@ -1,10 +1,4 @@
-# BGU-SingList
-
-Page 109 Listing 65 BGU-SingList/Node.java  
-Page 109 Listing 66 BGU-SingList/MyList.java  
-Page 109 Listing 67 BGU-SingList/Main.java  
-
-## Basic data structures  
+# Section 12. Basic data structures  
 
 Computer programs are all about processing information. The amount of information that has to be handled is very often really huge and grows rapidly from year to year. Therefore, it is very important to organize the data in such a way that processing it is fast and efficient. Generations of scientists have been working (and are still working) on that problem. Generally, designing a way in which the data is structurized is related to the way in which it will be used; both aspects are studied by the branch of computer science called Algorithms and Data Structures.  
   
@@ -23,8 +17,14 @@ Thus, the situation looks like this:
 Note that having the reference to the first node (conventionally called **head**), we can access all the nodes, because in each of them we will find the reference to the next one. 
   
 Let us consider an example. The class **Node** represents a node containing data - in this case just an **int** - and a reference to the next node:
+
+# BGU-SingList
+
+Page 109 Listing 65 BGU-SingList/Node.java  
+Page 109 Listing 66 BGU-SingList/MyList.java  
+Page 109 Listing 67 BGU-SingList/Main.java  
   
-### **[Listing 65 BGU-SingList/Node.java](https://github.com/Java-PJATK/65.66.67.BGU-SingList/blob/main/Node.java)**
+#[Listing 65 BGU-SingList/Node.java](https://github.com/Java-PJATK/65.66.67.BGU-SingList/blob/main/Node.java)
 ```java
 // Listing 65
 // BGU-SingList/Node.java
